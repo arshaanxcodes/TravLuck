@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Scrollytelling journey through Lucknow, India."
+    />
+    <title>Experience Lucknow | Scrollytelling</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="progress-wrap" aria-hidden="true">
+      <div class="progress-bar" id="scrollProgress"></div>
+    </div>
+
+    <header class="top-controls">
+      <button id="themeToggle" class="chip" aria-label="Toggle theme">Light</button>
+      <button id="musicToggle" class="chip" aria-label="Toggle music">Music Off</button>
+    </header>
+
+    <main>
+      <section class="hero" id="hero">
+        <img
+          src="https://images.unsplash.com/photo-1613214150384-a24eb06784cc?auto=format&fit=crop&w=2000&q=80"
+          alt="Lucknow skyline"
+          class="hero-bg"
+          loading="eager"
+        />
+        <div class="hero-overlay"></div>
+        <div class="hero-content reveal">
+          <p class="eyebrow">A Cinematic Journey</p>
+          <h1>
+            Experience Lucknow
+            <span>The City of Nawabs</span>
+          </h1>
+          <p class="hero-copy">
+            Scroll through history, monuments, flavors, and poetry in one guided
+            immersive story.
+          </p>
+          <a class="scroll-cue" href="#history">Scroll</a>
+        </div>
+      </section>
+
+      <section class="section" id="history">
+        <div class="container">
+          <h2 class="section-title reveal">History Woven in Grace</h2>
+          <p class="section-copy reveal">
+            The city grew from Mughal foundations to Nawabi brilliance and now
+            lives as one of India’s richest cultural archives.
+          </p>
+          <div class="timeline">
+            <article class="timeline-item reveal">
+              <div class="timeline-image-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1400&q=80"
+                  alt="Historic architecture"
+                  class="parallax-img"
+                  data-speed="0.12"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <p class="meta">1526 - 1722</p>
+                <h3>Mughal Foundations</h3>
+                <p>
+                  Lucknow developed as a strategic and artistic center, drawing
+                  Persian influences into local craft and courtly traditions.
+                </p>
+              </div>
+            </article>
+            <article class="timeline-item reveal">
+              <div class="timeline-image-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1598091383021-15ddea10925d?auto=format&fit=crop&w=1400&q=80"
+                  alt="Nawabi architecture"
+                  class="parallax-img"
+                  data-speed="0.16"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <p class="meta">1722 - 1856</p>
+                <h3>Nawabi Flourish</h3>
+                <p>
+                  Under the Nawabs of Awadh, Lucknow became synonymous with
+                  etiquette, poetry, music, cuisine, and monumental architecture.
+                </p>
+              </div>
+            </article>
+            <article class="timeline-item reveal">
+              <div class="timeline-image-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=1400&q=80"
+                  alt="Lucknow cityscape"
+                  class="parallax-img"
+                  data-speed="0.1"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <p class="meta">1857 and Beyond</p>
+                <h3>Resilience and Legacy</h3>
+                <p>
+                  Through upheaval and modern change, the city preserved a rare
+                  elegance that still defines daily life.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="landmarks">
+        <div class="container">
+          <h2 class="section-title reveal">Landmarks of Lucknow</h2>
+          <p class="section-copy reveal">
+            Open each monument to explore stories behind the city’s iconic
+            silhouettes.
+          </p>
+          <div class="landmark-grid">
+            <button
+              class="landmark-card reveal"
+              data-title="Bara Imambara"
+              data-detail="Built in 1784 by Nawab Asaf-ud-Daula, Bara Imambara is famed for its vast hall and the legendary Bhul Bhulaiya labyrinth."
+              data-image="https://images.unsplash.com/photo-1605647540924-852290f6b0d5?auto=format&fit=crop&w=1400&q=80"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1605647540924-852290f6b0d5?auto=format&fit=crop&w=1400&q=80"
+                alt="Bara Imambara"
+                loading="lazy"
+              />
+              <div>
+                <h3>Bara Imambara</h3>
+                <p>A labyrinthine architectural marvel.</p>
+              </div>
+            </button>
+            <button
+              class="landmark-card reveal"
+              data-title="Chota Imambara"
+              data-detail="Known for chandeliers, calligraphy, and gilded interiors, this monument captures the ceremonial refinement of Awadh."
+              data-image="https://images.unsplash.com/photo-1587474260584-136574528ed5?auto=format&fit=crop&w=1400&q=80"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1587474260584-136574528ed5?auto=format&fit=crop&w=1400&q=80"
+                alt="Chota Imambara"
+                loading="lazy"
+              />
+              <div>
+                <h3>Chota Imambara</h3>
+                <p>Brilliance in light and ornament.</p>
+              </div>
+            </button>
+            <button
+              class="landmark-card reveal"
+              data-title="Rumi Darwaza"
+              data-detail="The 18th-century gateway remains Lucknow’s most recognizable emblem and a signature of Awadhi urban design."
+              data-image="https://images.unsplash.com/photo-1514222134-b57cbb8ce073?auto=format&fit=crop&w=1400&q=80"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1514222134-b57cbb8ce073?auto=format&fit=crop&w=1400&q=80"
+                alt="Rumi Darwaza"
+                loading="lazy"
+              />
+              <div>
+                <h3>Rumi Darwaza</h3>
+                <p>The gateway that frames the city.</p>
+              </div>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section food-section" id="food">
+        <div class="container">
+          <h2 class="section-title reveal">Flavors of Awadh</h2>
+          <p class="section-copy reveal">
+            Vertical scrolling drives this horizontal tasting journey through
+            Lucknow’s celebrated culinary icons.
+          </p>
+        </div>
+        <div class="food-sticky">
+          <div class="food-track" id="foodTrack">
+            <article class="food-card">
+              <img
+                src="https://images.unsplash.com/photo-1529006557810-274b9b2fc783?auto=format&fit=crop&w=1500&q=80"
+                alt="Tunday Kababi"
+                loading="lazy"
+              />
+              <h3>Tunday Kababi</h3>
+              <p>Silky, spice-rich galouti kebabs that melt instantly.</p>
+            </article>
+            <article class="food-card">
+              <img
+                src="https://images.unsplash.com/photo-1563379091339-03246963d7d3?auto=format&fit=crop&w=1500&q=80"
+                alt="Awadhi Biryani"
+                loading="lazy"
+              />
+              <h3>Awadhi Biryani</h3>
+              <p>Fragrant layers of saffron rice and delicate seasoning.</p>
+            </article>
+            <article class="food-card">
+              <img
+                src="https://images.unsplash.com/photo-1590080876272-941da99b4ca3?auto=format&fit=crop&w=1500&q=80"
+                alt="Kulfi"
+                loading="lazy"
+              />
+              <h3>Kulfi</h3>
+              <p>Dense, creamy finish with cardamom and pistachio notes.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="culture">
+        <div class="container">
+          <h2 class="section-title reveal">Culture in Motion</h2>
+          <p class="section-copy reveal">
+            Kathak rhythm and Urdu expression define the emotional texture of
+            Lucknow.
+          </p>
+          <div class="culture-grid">
+            <div class="culture-image reveal">
+              <img
+                src="https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&w=1400&q=80"
+                alt="Kathak dance performance"
+                loading="lazy"
+              />
+            </div>
+            <div class="poetry-box reveal">
+              <p class="meta">Urdu Poetry</p>
+              <p id="typewriter" class="typewriter"></p>
+              <div class="verse-buttons">
+                <button class="verse-btn active" data-index="0">Verse 1</button>
+                <button class="verse-btn" data-index="1">Verse 2</button>
+                <button class="verse-btn" data-index="2">Verse 3</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="map">
+        <div class="container">
+          <h2 class="section-title reveal">Interactive Route Map</h2>
+          <p class="section-copy reveal">
+            Watch the pins appear as the map section enters view, then explore
+            each stop.
+          </p>
+          <div class="map-layout">
+            <div id="lucknowMap" class="map-box reveal"></div>
+            <div class="map-list">
+              <article class="map-item reveal">
+                <p class="meta">Stop 1</p>
+                <h3>Bara Imambara</h3>
+                <p>Monumental hall and Bhul Bhulaiya maze.</p>
+              </article>
+              <article class="map-item reveal">
+                <p class="meta">Stop 2</p>
+                <h3>Rumi Darwaza</h3>
+                <p>Historic gateway and prime photo landmark.</p>
+              </article>
+              <article class="map-item reveal">
+                <p class="meta">Stop 3</p>
+                <h3>Tunday Kababi</h3>
+                <p>Legendary kebab destination in Chowk.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section cta-section" id="cta">
+        <div class="container">
+          <div class="cta-panel reveal">
+            <p class="meta">Your Journey Starts Here</p>
+            <h2>Plan Your Trip to Lucknow</h2>
+            <p>
+              Turn this story into your itinerary with heritage walks, food
+              trails, and cultural nights across the city.
+            </p>
+            <button class="cta-btn">Start Planning</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="modal hidden" id="landmarkModal" aria-hidden="true">
+      <div class="modal-panel">
+        <button class="modal-close" id="modalClose" aria-label="Close">X</button>
+        <img id="modalImage" alt="" />
+        <div class="modal-content">
+          <h3 id="modalTitle"></h3>
+          <p id="modalDetail"></p>
+        </div>
+      </div>
+    </div>
+
+    <audio
+      id="bgMusic"
+      preload="none"
+      loop
+      src="https://cdn.pixabay.com/download/audio/2022/08/22/audio_57e6ec85cd.mp3?filename=asian-inspiration-111713.mp3"
+    ></audio>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"
+      defer
+    ></script>
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+      defer
+    ></script>
+    <script src="./script.js" defer></script>
+  </body>
+</html>
